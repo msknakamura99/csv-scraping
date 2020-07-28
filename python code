@@ -1,0 +1,33 @@
+# scraiping
+# To scrape the html
+import requests
+from bs4 import BeautifulSoup
+import csv
+import pprint
+
+url = "" #url to scrape
+html = requests.get(url)
+soup = BeautifulSoup(html.content, "html.parser")
+
+# check the label you want to get
+print(soup)
+
+# check the components
+adress1= soup.find_all('', class_= "") # '' is tag, class_ = "" is class
+print(adress1)
+
+# write in the csv
+i = 0
+with open('.csv','w', encoding = "UTF-8") as f:
+    writer = csv.writer(f)
+    while i < : # number of the components
+        writer.writerow(adress1[i])
+        i = i+1
+
+# add to the csv
+i = 0
+with open('.csv','a', encoding = "UTF-8") as f:
+    writer = csv.writer(f)
+    while i < :
+        writer.writerow(adress[i])
+        i = i+1
